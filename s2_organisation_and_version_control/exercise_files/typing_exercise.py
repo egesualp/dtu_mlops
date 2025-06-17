@@ -59,7 +59,7 @@ def validation(model, testloader, criterion):
 def train(model, trainloader, testloader, criterion, optimizer=None, epochs=5, print_every=40) -> None:
     """Train a PyTorch Model."""
     if optimizer is None:
-        optimizer = torch.optim.Adam(model.parameters(), lr=1e-2)
+        optimizer = torch.optim.Adagrad(model.parameters(), lr=1e-2)
     steps = 0
     running_loss = 0
     for e in range(epochs):
